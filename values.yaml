@@ -32,7 +32,7 @@ spec:
     spec:
       containers:
       - name: kafka-manager
-        image: zenko/kafka-manager
+        image: <images> #rkazak1 / kafka-manager
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
