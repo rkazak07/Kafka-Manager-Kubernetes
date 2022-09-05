@@ -9,10 +9,10 @@ spec:
   - name: http
     port: 8080
     targetPort: 80
-    nodePort: 30029
+    #nodePort: 30029
   selector:
     app: kafka-manager
-  type: NodePort
+  type: ClusterIP
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -32,7 +32,7 @@ spec:
     spec:
       containers:
       - name: kafka-manager
-        image: <images> #rkazak1 / kafka-manager
+        image: rkazak1/kafka-manager:v1
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
